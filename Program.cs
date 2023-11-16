@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var connectionString = builder.Configuration.GetConnectionString("QlbanValiContext");
-builder.Services.AddDbContext<QlbanVaLiContext>(x=>x.UseSqlServer(connectionString));
-builder.Services.AddScoped<ILoaiSpRepository,LoaiSpRepository>();
+builder.Services.AddDbContext<QlbanVaLiContext>(x => x.UseSqlServer(connectionString));
+builder.Services.AddScoped<ILoaiSpRepository, LoaiSpRepository>();
 builder.Services.AddSession();
 
 var app = builder.Build();
