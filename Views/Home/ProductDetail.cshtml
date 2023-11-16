@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "ProductDetail";
     Layout = "~/Views/Shared/_LayoutOgani.cshtml";
 }
@@ -21,7 +20,7 @@
                         @foreach (var image in Model.anhSps)
                         {
                             <img data-imgbigurl="@Url.Content("../ProductsImages/Images/"+image.TenFileAnh)"
-                                 src="@Url.Content("../ProductsImages/Images/"+image.TenFileAnh)" alt="">
+                             src="@Url.Content("../ProductsImages/Images/"+image.TenFileAnh)" alt="">
                         }
                     </div>
                 </div>
