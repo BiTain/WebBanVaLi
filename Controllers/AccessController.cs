@@ -24,13 +24,12 @@ namespace WebBanVaLi.Controllers
         {
             if (HttpContext.Session.GetString("UserName") == null)
             {
-                var u = db.TUsers.Where(x => x.Username.Equals(user.Username) && x.Password.Equals(user.Password)).FirstOrDefault();
-                if (u != null && u.LoaiUser == 0)
+                var u = db.TUsers.Where(x=>x.Username.Equals(user.Username) && x.Password.Equals(user.Password)).FirstOrDefault();
+                if (u != null && u.LoaiUser==0)
                 {
-                    HttpContext.Session.SetString("UserName", u.Username.ToString());
+                    HttpContext.Session.SetString("UserName",u.Username.ToString());
                     return RedirectToAction("Index", "Home");
-                }
-                else if (u != null && u.LoaiUser == 1)
+                }else if(u != null && u.LoaiUser == 1)
                 {
                     HttpContext.Session.SetString("UserName", u.Username.ToString());
                     return RedirectToAction("Index", "Admin");
