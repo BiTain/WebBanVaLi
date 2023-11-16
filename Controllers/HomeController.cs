@@ -9,7 +9,7 @@ namespace WebBanVaLi.Controllers
 {
     public class HomeController : Controller
     {
-        QlbanVaLiContext db = new QlbanVaLiContext();
+       QlbanVaLiContext db = new QlbanVaLiContext();
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -21,39 +21,28 @@ namespace WebBanVaLi.Controllers
         {
             int pageSize = 8;
             int pageNumber = page == null || page < 0 ? 1 : page.Value;
-            var lstsanpham = db.TDanhMucSps.OrderBy(x => x.TenSp).ToList();
-            var lst = new PagedList<TDanhMucSp>(lstsanpham, pageNumber, pageSize);
+            var lstsanpham = db.TDanhMucSps.AsNoTracking().OrderBy(x=>x.TenSp);
+            PagedList<TDanhMucSp> lst = new PagedList<TDanhMucSp>(lstsanpham,pageNumber,pageSize);
 
             return View(lst);
         }
 
-
-        public IActionResult GioHang()
-        {
-            var user = HttpContext.Session.GetString("UserName");
-            if (string.IsNullOrEmpty(user))
-            {
-                return Redirect("/Access/Login");
-            }
-            var items = db.TGioHangs.Include(c => c.MaSpNavigation).Where(c => c.UserId.Equals(user));
-            return View(items.ToList());
-        }
-        public IActionResult SanPhamTheoLoai(String maloai, int? page)
+        public IActionResult SanPhamTheoLoai(String maloai,int? page)
         {
             int pageSize = 8;
             int pageNumber = page == null || page < 0 ? 1 : page.Value;
-            var lstsanpham = db.TDanhMucSps.AsNoTracking().Where(x => x.MaLoai == maloai).
+            var lstsanpham = db.TDanhMucSps.AsNoTracking().Where(x=>x.MaLoai==maloai).
                 OrderBy(x => x.TenSp);
             PagedList<TDanhMucSp> lst = new PagedList<TDanhMucSp>(lstsanpham, pageNumber, pageSize);
-            ViewBag.maloai = maloai;
+            ViewBag.maloai=maloai;
             return View(lst);
         }
 
         public IActionResult ChiTietSanPham(String maSp)
         {
-            var sanPham = db.TDanhMucSps.SingleOrDefault(x => x.MaSp == maSp);
-            var anhSanPham = db.TAnhSps.Where(x => x.MaSp == maSp).ToList();
-            ViewBag.anhSanPham = anhSanPham;
+            var sanPham = db.TDanhMucSps.SingleOrDefault(x=>x.MaSp==maSp);
+            var anhSanPham=db.TAnhSps.Where(x=>x.MaSp==maSp).ToList();
+            ViewBag.anhSanPham=anhSanPham;
             return View(sanPham);
         }
 
@@ -61,11 +50,11 @@ namespace WebBanVaLi.Controllers
         {
             var sanPham = db.TDanhMucSps.SingleOrDefault(x => x.MaSp == maSp);
             var anhSanPham = db.TAnhSps.Where(x => x.MaSp == maSp).ToList();
-            var homeProductDetailViewModel = new HomeProductDetailViewModel
-            { danhMucSp = sanPham, anhSps = anhSanPham };
+            var homeProductDetailViewModel = new HomeProductDetailViewModel 
+            { danhMucSp = sanPham,anhSps = anhSanPham };
             return View(homeProductDetailViewModel);
         }
-
+        
         public IActionResult Privacy()
         {
             return View();

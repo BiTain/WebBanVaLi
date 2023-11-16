@@ -66,7 +66,7 @@
                     <a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="/Home/GioHang">Shoping Cart</a></li>
+                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
                         <li><a href="./checkout.html">Check Out</a></li>
                         <li><a href="./blog-details.html">Blog Details</a></li>
                     </ul>
@@ -159,7 +159,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="/Home/GioHang"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
@@ -411,31 +411,7 @@
     <script src="../1LayoutOgani/js/mixitup.min.js"></script>
     <script src="../1LayoutOgani/js/owl.carousel.min.js"></script>
     <script src="../1LayoutOgani/js/main.js"></script>
-    <script>
-        function addToCart(masp) {
-            $.ajax({
-                url: "/api/ProductAPI/UpdateCartItem?masp=" + masp + "&soluong=1",
-                cache: false,
-                contentType: false,
-                processData: false,
-                type: "GET",
-                dataType: 'json',
-                // data: JSON.stringify({ masp: masp1, soLuong: 1 }),
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('Accept', 'application/json');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                },
-                success: function (result) {
-                    alert('Đã thêm vào giỏ hàng thành công');
-                    console.log(result);
-                },
-                error: function (xhr, resp, text) {
-                    location.href = "/Access/Login";
-                    //console.log(resp);
-                }
-            })
-        }
-    </script>
+
 
 
 </body>

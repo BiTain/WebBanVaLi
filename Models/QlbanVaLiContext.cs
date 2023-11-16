@@ -27,8 +27,6 @@ public partial class QlbanVaLiContext : DbContext
 
     public virtual DbSet<TDanhMucSp> TDanhMucSps { get; set; }
 
-    public virtual DbSet<TGioHang> TGioHangs { get; set; }
-
     public virtual DbSet<THangSx> THangSxes { get; set; }
 
     public virtual DbSet<THoaDonBan> THoaDonBans { get; set; }
@@ -267,32 +265,6 @@ public partial class QlbanVaLiContext : DbContext
             entity.HasOne(d => d.MaNuocSxNavigation).WithMany(p => p.TDanhMucSps)
                 .HasForeignKey(d => d.MaNuocSx)
                 .HasConstraintName("FK_tDanhMucSP_tQuocGia");
-        });
-
-        modelBuilder.Entity<TGioHang>(entity =>
-        {
-            entity.ToTable("tGioHang");
-
-            entity.Property(e => e.DonGia).HasColumnType("money");
-            entity.Property(e => e.MaSp)
-                .HasMaxLength(25)
-                .IsUnicode(false)
-                .IsFixedLength()
-                .HasColumnName("MaSP");
-            entity.Property(e => e.UserId)
-                .HasMaxLength(100)
-                .IsUnicode(false)
-                .IsFixedLength();
-
-            entity.HasOne(d => d.MaSpNavigation).WithMany(p => p.TGioHangs)
-                .HasForeignKey(d => d.MaSp)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_tGioHang_tDanhMucSP");
-
-            entity.HasOne(d => d.User).WithMany(p => p.TGioHangs)
-                .HasForeignKey(d => d.UserId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_tGioHang_tUser");
         });
 
         modelBuilder.Entity<THangSx>(entity =>
