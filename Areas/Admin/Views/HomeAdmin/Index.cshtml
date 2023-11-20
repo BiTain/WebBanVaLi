@@ -1,8 +1,79 @@
-﻿
+﻿@using WebBanVaLi.Models;
+@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<TDanhMucSp>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "DanhMucSanPham";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h2>Danh sách sản phẩm</h2>
 
-<h1>Index</h1>
+<a asp-action="ThemSanPhamMoi">
+    <button style="background:#0d6efd" type="button" class="btn btn-primary">Tạo mới sản phẩm</button>
+</a>
+<p style="text-align:center">@TempData["Message"]</p>
+<table class="table">
+    <thead>
+        <tr class="table-warning">
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Cân nặng
+            </th>
+            <th>
+                Độ nới
+            </th>
+            <th>
+                Thời gian bảo hành
+            </th>
+            <th>
+                Giá thành
+            </th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-success">
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CanNang) kg
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoNoi) cm
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThoiGianBaoHanh) tháng
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaNhoNhat) VNĐ
+                </td>
+                <td>
+                    <a style="text-decoration:none" asp-action="SuaSanPham" asp-route-masp="@item.MaSp">
+                        <button type="button" style="background: #ffc107;padding: 8px 25px;" class="btn btn-warning">
+                            <img style="width: 20px;height: 20px;" src="../../LayoutAdmin/assets/edit-alt-regular-24.png" />
+                        </button>
+                    </a>
+                    <a style="text-decoration:none" asp-action="XoaSanPham" asp-route-masp="@item.MaSp">
+                        <button type="button" style="background: #dc3545;padding: 8px 25px;" class="btn btn-danger">
+                            <img style="width: 20px;height: 20px;" src="../../LayoutAdmin/assets/trash-regular-24.png" />
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+    @Html.PagedListPager(Model,page=> Url.Action("Index",new{page=page, tensp=ViewBag.tensp}),new
+    X.PagedList.Web.Common.PagedListRenderOptions(){
+    LiElementClasses = new List<String>{"page-item"},
+    PageClasses = new List<String>{"page-link"}
+    })
+</div>
 

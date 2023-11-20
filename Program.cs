@@ -1,3 +1,4 @@
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using WebBanVaLi.Models;
 using WebBanVaLi.Repository;
@@ -26,6 +27,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseStaticFiles();
 
 app.UseAuthorization();
 app.UseSession();
