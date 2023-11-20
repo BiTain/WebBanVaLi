@@ -1,0 +1,101 @@
+﻿@using X.PagedList.Mvc.Core;
+@using WebBanVaLi.Models;
+@model X.PagedList.IPagedList<TDanhMucSp>
+
+@{
+    ViewData["Title"] = "DanhMucSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h2>Danh sách các sản phẩm</h2>
+
+
+
+<a asp-action="ThemSanPhamMoi">
+    <button style="background:#0d6efd" type="button" class="btn btn-primary">Tạo mới sản phẩm</button>
+</a>
+
+<p>
+    @TempData["tb"]
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].TenSp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].CanNang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].DoNoi)
+            </th>         
+            <th>
+                @Html.DisplayNameFor(model => model[0].ThoiGianBaoHanh)
+            </th>           
+            <th>
+                @Html.DisplayNameFor(model => model[0].ChietKhau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].GiaNhoNhat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].GiaLonNhat)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CanNang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoNoi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThoiGianBaoHanh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChietKhau)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaNhoNhat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaLonNhat)
+                </td>
+
+                <td>
+                    <a asp-action="SuaSanPham" asp-route-masp="@item.MaSp">
+                        <button type="button" style="background: #ffc107;padding: 8px 25px;" class="btn btn-warning">
+                            <img style="width: 20px;height: 20px;" src="../../LayoutAdmin/assets/edit-alt-regular-24.png" />
+                        </button>
+                    </a>
+
+                    <a asp-action="XoaSanPham" asp-route-masp="@item.MaSp">
+                        <button type="button" style="background: #dc3545;padding: 8px 25px;" class="btn btn-danger">
+                            <img style="width: 20px;height: 20px;" src="../../LayoutAdmin/assets/trash-regular-24.png" />
+                        </button>
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="product__pagination">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new {page = page}),
+    new X.PagedList.Web.Common.PagedListRenderOptions(){
+        LiElementClasses=new List<String>{"page-item"},
+        PageClasses=new List<String> {"page-link"}
+    })
+</div>
+

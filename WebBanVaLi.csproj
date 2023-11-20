@@ -20,7 +20,8 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\LayoutAdmin\assets\Areas\Admin\Data\" />
+    <Folder Include="wwwroot\LayoutAdmin\assets\Areas\Admin\Models\" />
   </ItemGroup>
 
 </Project>
