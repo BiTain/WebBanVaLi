@@ -1,10 +1,30 @@
-﻿using System;
+﻿using Microsoft.Extensions.Primitives;
+using System;
 using System.Collections.Generic;
 
 namespace WebBanVaLi.Models;
 
 public partial class TDanhMucSp
 {
+
+    public TDanhMucSp() { }
+    public TDanhMucSp(string maSp, string? tenSp, string? maChatLieu, string? model, double? canNang, double? doNoi, string? maHangSx, string? maNuocSx, double? thoiGianBaoHanh, string? maDt, string anhDaiDien, decimal? giaLonNhat, string? GioiThieuSp)
+    {
+        MaSp = maSp;
+        TenSp = tenSp;
+        MaChatLieu = maChatLieu;
+        Model = model;
+        CanNang = canNang;
+        DoNoi = doNoi;
+        MaHangSx = maHangSx;
+        MaNuocSx = maNuocSx;
+        ThoiGianBaoHanh = thoiGianBaoHanh;
+        MaDt = maDt;
+        AnhDaiDien = anhDaiDien;
+        GiaLonNhat = giaLonNhat;
+        this.GioiThieuSp = GioiThieuSp;
+    }
+
     public string MaSp { get; set; } = null!;
 
     public string? TenSp { get; set; }
