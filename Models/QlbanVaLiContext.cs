@@ -33,7 +33,7 @@ public partial class QlbanVaLiContext : DbContext
 
     public virtual DbSet<THoaDonBan> THoaDonBans { get; set; }
 
-    public virtual DbSet<TKhachHang> TKhachHangs { get; set; }
+ /*   public virtual DbSet<TKhachHang> TKhachHangs { get; set; }*/
 
     public virtual DbSet<TKichThuoc> TKichThuocs { get; set; }
 
@@ -43,7 +43,7 @@ public partial class QlbanVaLiContext : DbContext
 
     public virtual DbSet<TMauSac> TMauSacs { get; set; }
 
-    public virtual DbSet<TNhanVien> TNhanViens { get; set; }
+    /*public virtual DbSet<TNhanVien> TNhanViens { get; set; }*/
 
     public virtual DbSet<TQuocGium> TQuocGia { get; set; }
 
@@ -51,7 +51,7 @@ public partial class QlbanVaLiContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=QLBanVaLi;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        => optionsBuilder.UseSqlServer("Data Source=LAPTOP-AVP0CLMN\\TUANLETHANH;Initial Catalog=QLBanVaLi;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
     
 
@@ -116,24 +116,25 @@ public partial class QlbanVaLiContext : DbContext
 
         modelBuilder.Entity<TChiTietHdb>(entity =>
         {
-            entity.HasKey(e => new { e.MaHoaDon, e.MaChiTietSp });
+            entity.HasKey(e => new { e.MaHoaDon, e.MaSp });
 
             entity.ToTable("tChiTietHDB");
 
             entity.Property(e => e.MaHoaDon)
                 .HasMaxLength(25)
                 .IsUnicode(false)
-                .IsFixedLength();
-            entity.Property(e => e.MaChiTietSp)
+                .IsFixedLength()
+                .ValueGeneratedNever();
+            entity.Property(e => e.MaSp)
                 .HasMaxLength(25)
                 .IsUnicode(false)
                 .IsFixedLength()
-                .HasColumnName("MaChiTietSP");
+                .HasColumnName("MaSP");
             entity.Property(e => e.DonGiaBan).HasColumnType("money");
             entity.Property(e => e.GhiChu).HasMaxLength(100);
 
             entity.HasOne(d => d.MaChiTietSpNavigation).WithMany(p => p.TChiTietHdbs)
-                .HasForeignKey(d => d.MaChiTietSp)
+                .HasForeignKey(d => d.MaSp)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_tChiTietHDB_tChiTietSanPham");
 
@@ -326,14 +327,7 @@ public partial class QlbanVaLiContext : DbContext
                 .IsFixedLength();
             entity.Property(e => e.GhiChu).HasMaxLength(100);
             entity.Property(e => e.GiamGiaHd).HasColumnName("GiamGiaHD");
-            entity.Property(e => e.MaKhachHang)
-                .HasMaxLength(25)
-                .IsUnicode(false)
-                .IsFixedLength();
-            entity.Property(e => e.MaNhanVien)
-                .HasMaxLength(25)
-                .IsUnicode(false)
-                .IsFixedLength();
+           
             entity.Property(e => e.MaSoThue)
                 .HasMaxLength(100)
                 .IsUnicode(false)
@@ -343,17 +337,9 @@ public partial class QlbanVaLiContext : DbContext
             entity.Property(e => e.TongTienHd)
                 .HasColumnType("money")
                 .HasColumnName("TongTienHD");
-
-            entity.HasOne(d => d.MaKhachHangNavigation).WithMany(p => p.THoaDonBans)
-                .HasForeignKey(d => d.MaKhachHang)
-                .HasConstraintName("FK_tHoaDonBan_tKhachHang");
-
-            entity.HasOne(d => d.MaNhanVienNavigation).WithMany(p => p.THoaDonBans)
-                .HasForeignKey(d => d.MaNhanVien)
-                .HasConstraintName("FK_tHoaDonBan_tNhanVien");
         });
 
-        modelBuilder.Entity<TKhachHang>(entity =>
+        /*modelBuilder.Entity<TKhachHang>(entity =>
         {
             entity.HasKey(e => e.MaKhanhHang);
 
@@ -384,7 +370,7 @@ public partial class QlbanVaLiContext : DbContext
             entity.HasOne(d => d.UsernameNavigation).WithMany(p => p.TKhachHangs)
                 .HasForeignKey(d => d.Username)
                 .HasConstraintName("FK_tKhachHang_tUser");
-        });
+        });*/
 
         modelBuilder.Entity<TKichThuoc>(entity =>
         {
@@ -441,7 +427,7 @@ public partial class QlbanVaLiContext : DbContext
             entity.Property(e => e.TenMauSac).HasMaxLength(100);
         });
 
-        modelBuilder.Entity<TNhanVien>(entity =>
+       /* modelBuilder.Entity<TNhanVien>(entity =>
         {
             entity.HasKey(e => e.MaNhanVien);
 
@@ -477,7 +463,7 @@ public partial class QlbanVaLiContext : DbContext
             entity.HasOne(d => d.UsernameNavigation).WithMany(p => p.TNhanViens)
                 .HasForeignKey(d => d.Username)
                 .HasConstraintName("FK_tNhanVien_tUser");
-        });
+        });*/
 
         modelBuilder.Entity<TQuocGium>(entity =>
         {

@@ -54,7 +54,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[tChiTietHDB](
-	[MaHoaDon] [char](25) NOT NULL,
+	[MaHoaDon] INT NOT NULL,
 	[MaChiTietSP] [char](25) NOT NULL,
 	[SoLuongBan] [int] NULL,
 	[DonGiaBan] [money] NULL,
@@ -157,13 +157,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[tHoaDonBan](
-	[MaHoaDon] [char](25) NOT NULL,
+	[MaHoaDon] INT IDENTITY(1, 1) NOT NULL,
 	[NgayHoaDon] [datetime] NULL,
-	[MaKhachHang] [char](25) NULL,
-	[MaNhanVien] [char](25) NULL,
 	[TongTienHD] [money] NULL,
 	[GiamGiaHD] [float] NULL,
-	[PhuongThucThanhToan] [tinyint] NULL,
+	[PhuongThucThanhToan] NVARCHAR(10) NULL,
 	[MaSoThue] [char](100) NULL,
 	[ThongTinThue] [nvarchar](250) NULL,
 	[GhiChu] [nvarchar](100) NULL,
