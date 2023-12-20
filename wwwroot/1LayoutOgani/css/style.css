@@ -178,7 +178,7 @@ ol {
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 13px 30px 12px;
-	background: #7fad39;
+	background: #98D5FC;
 	border: none;
 }
 
@@ -587,7 +587,7 @@ ol {
 }
 
 .hero__categories__all {
-	background: #7fad39;
+	background: #98D5FC;
 	position: relative;
 	padding: 10px 25px 10px 40px;
 	cursor: pointer;
