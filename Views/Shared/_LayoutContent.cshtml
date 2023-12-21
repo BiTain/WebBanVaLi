@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
@@ -14,55 +13,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="../1LayoutOgani/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../1LayoutOgani/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../1LayoutOgani/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="../1LayoutOgani/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="../1LayoutOgani/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="../1LayoutOgani/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="../1LayoutOgani/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="../1LayoutOgani/css/style.css" type="text/css">
-    <style>
-        .hero__categories__all {
-            background-color: #98D5FC;
-        }
-        .site-btn {
-            background-color: #98D5FC;
-        }
+    <link rel="stylesheet" href="/1LayoutOgani/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/1LayoutOgani/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/1LayoutOgani/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/1LayoutOgani/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/1LayoutOgani/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/1LayoutOgani/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/1LayoutOgani/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/1LayoutOgani/css/style.css" type="text/css">
 
-        .header__menu ul li.active a {
-            color: #98D5FC;
-        }
-
-        .header__cart ul li a span {
-            background: #98D5FC;
-        }
-
-        .hero__search__phone__icon {
-            color: #98D5FC;
-        }
-
-        .section-title h2:after {
-            background-color: #98D5FC;
-        }
-
-        .product__pagination a:hover, .blog__pagination a:hover {
-            background-color: #98D5FC;
-            border-color: #98D5FC;
-        }
-
-        .header__menu ul li:hover > a {
-            color: #98D5FC;
-        }
-        .primary-btn {
-            background-color: #98D5FC;
-        }
-
-        .featured__item__pic__hover li:hover a {
-            background-color: #98D5FC;
-            border-color: #98D5FC;
-        }
-    </style>
+    <!-- Js Plugins -->
+    <script src="/1LayoutOgani/js/jquery-3.3.1.min.js"></script>
+    <script src="/1LayoutOgani/js/bootstrap.min.js"></script>
+    <script src="/1LayoutOgani/js/jquery.nice-select.min.js"></script>
+    <script src="/1LayoutOgani/js/jquery-ui.min.js"></script>
+    <script src="/1LayoutOgani/js/jquery.slicknav.js"></script>
+    <script src="/1LayoutOgani/js/mixitup.min.js"></script>
+    <script src="/1LayoutOgani/js/owl.carousel.min.js"></script>
+    <script src="/1LayoutOgani/js/main.js"></script>
 </head>
 
 <body>
@@ -75,7 +43,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="../1LayoutOgani/img/logo_luggage.jpg" alt=""></a>
+            <a href="#"><img src="/1LayoutOgani/img/logo.png" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
@@ -86,7 +54,7 @@
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
-                <img src="../1LayoutOgani/img/language.png" alt="">
+                <img src="/1LayoutOgani/img/language.png" alt="">
                 <div>English</div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
@@ -95,8 +63,7 @@
                 </ul>
             </div>
             <div class="header__top__right__auth">
-                @* <a href="#"><i class="fa fa-user"></i> Login</a> *@
-                <a asp-controller="Access" asp-action="Logout"><i class="fa fa-user"></i> Logout</a>
+                <a href="#"><i class="fa fa-user"></i> Login</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -107,7 +74,7 @@
                     <a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="/Home/GioHang">Shoping Cart</a></li>
+                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
                         <li><a href="./checkout.html">Check Out</a></li>
                         <li><a href="./blog-details.html">Blog Details</a></li>
                     </ul>
@@ -136,7 +103,7 @@
         <div class="header__top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-6">
                         <div class="header__top__left">
                             <ul>
                                 <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
@@ -144,7 +111,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -153,7 +120,7 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__language">
-                                <img src="../1LayoutOgani/img/language.png" alt="">
+                                <img src="/1LayoutOgani/img/language.png" alt="">
                                 <div>English</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
@@ -162,8 +129,7 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                @* <a href="#"><i class="fa fa-user"></i> Login</a> *@
-                                <a asp-controller="Access" asp-action="Logout"><i class="fa fa-user"></i> Logout</a>
+                                <a href="#"><i class="fa fa-user"></i> Login</a>
                             </div>
                         </div>
                     </div>
@@ -174,14 +140,14 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img height="50px" width="260px" style="object-fit: cover;" src="../1LayoutOgani/img/logo_luggage.png" alt=""></a>
+                        <a href="./index.html"><img src="/1LayoutOgani/img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="@Url.Action("Index")">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li><a href="@Url.Action("Index")">Home</a></li>
+                            <li class="active"><a href="./shop-grid.html">Shop</a></li>
                             <li>
                                 <a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
@@ -200,7 +166,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="/Home/GioHang"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
@@ -213,16 +179,36 @@
     </header>
     <!-- Header Section End -->
     <!-- Hero Section Begin -->
-    <section class="hero">
+    <section class="hero hero-normal">
         <div class="container">
             <div class="row">
-                @await Component.InvokeAsync("LoaiSpMenu")
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>All departments</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">Fresh Meat</a></li>
+                            <li><a href="#">Vegetables</a></li>
+                            <li><a href="#">Fruit & Nut Gifts</a></li>
+                            <li><a href="#">Fresh Berries</a></li>
+                            <li><a href="#">Ocean Foods</a></li>
+                            <li><a href="#">Butter & Eggs</a></li>
+                            <li><a href="#">Fastfood</a></li>
+                            <li><a href="#">Fresh Onion</a></li>
+                            <li><a href="#">Papayaya & Crisps</a></li>
+                            <li><a href="#">Oatmeal</a></li>
+                            <li><a href="#">Fresh Bananas</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
                             <form action="#">
                                 <div class="hero__search__categories">
-                                    All products
+                                    All Categories
                                     <span class="arrow_carrot-down"></span>
                                 </div>
                                 <input type="text" placeholder="What do yo u need?">
@@ -239,126 +225,31 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="../1LayoutOgani/img/hero/bg.jpg">
-                        
-                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Hero Section End -->
-    <!-- Categories Section Begin -->
-    <section class="categories">
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="/1LayoutOgani/img/breadcrumb.jpg">
         <div class="container">
             <div class="row">
-                <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../1LayoutOgani/img/categories/vi.png">
-                            <h5><a href="#">Ví</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../ProductsImages/Images/bjbovrp0.klh.png">
-                            <h5><a href="#">Vali</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../1LayoutOgani/img/categories/goi.png">
-                            <h5><a href="#">Gối ngủ</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../1LayoutOgani/img/categories/tui.jpg">
-                            <h5><a href="#">Túi</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../1LayoutOgani/img/categories/cap.jpg">
-                            <h5><a href="#">Balo</a></h5>
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Shopping Cart</h2>
+                        <div class="breadcrumb__option">
+                            <a href="./index.html">Home</a>
+                            <span>Shopping Cart</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Categories Section End -->
-    <!-- Featured Section Begin -->
-    <section class="featured spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Featured Product</h2>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="row featured__filter" style="align-items:center;justify-content:center">
-                @RenderBody()
-            </div>
-        </div>
-    </section>
-    <!-- Featured Section End -->
-    <!-- Blog Section Begin -->
-    <section class="from-blog spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title from-blog__title">
-                        <h2>From The Blog</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img style="height:265.495px" src="../1LayoutOgani/img/blog/blog-7.jpg" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Traveling with suitcases</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="../1LayoutOgani/img/blog/blog-8.jpg" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Tips for choosing a suitcase</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="../1LayoutOgani/img/blog/blog-9.jpg" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Modern design</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Blog Section End -->
+    <!-- Breadcrumb Section End -->
+    <!-- Shoping Cart Section Begin -->
+    @RenderBody()
+    <!-- Shoping Cart Section End -->
     <!-- Footer Section Begin -->
     <footer class="footer spad">
         <div class="container">
@@ -366,7 +257,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img height="50px" width="260px" style="object-fit: cover;" src="../1LayoutOgani/img/logo_luggage.png" alt=""></a>
+                            <a href="./index.html"><img src="/1LayoutOgani/img/logo.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
@@ -423,48 +314,14 @@
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
-                        <div class="footer__copyright__payment"><img src="../1LayoutOgani/img/payment-item.png" alt=""></div>
+                        <div class="footer__copyright__payment"><img src="/1LayoutOgani/img/payment-item.png" alt=""></div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
     <!-- Footer Section End -->
-    <!-- Js Plugins -->
-    <script src="../1LayoutOgani/js/jquery-3.3.1.min.js"></script>
-    <script src="../1LayoutOgani/js/bootstrap.min.js"></script>
-    <script src="../1LayoutOgani/js/jquery.nice-select.min.js"></script>
-    <script src="../1LayoutOgani/js/jquery-ui.min.js"></script>
-    <script src="../1LayoutOgani/js/jquery.slicknav.js"></script>
-    <script src="../1LayoutOgani/js/mixitup.min.js"></script>
-    <script src="../1LayoutOgani/js/owl.carousel.min.js"></script>
-    <script src="../1LayoutOgani/js/main.js"></script>
 
-    <script>
-        function addToCart(masp) {
-            $.ajax({
-                url: "/api/ProductAPI/UpdateCartItem?masp=" + masp + "&soluong=1",
-                cache: false,
-                contentType: false,
-                processData: false,
-                type: "GET",
-                dataType: 'json',
-                // data: JSON.stringify({ masp: masp1, soLuong: 1 }),
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('Accept', 'application/json');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                },
-                success: function (result) {
-                    alert('Đã thêm vào giỏ hàng thành công');
-                    console.log(result);
-                },
-                error: function (xhr, resp, text) {
-                    location.href = "/Access/Login";
-                    //console.log(resp);
-                }
-            })
-        }
-    </script>
 
 
 </body>

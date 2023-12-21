@@ -10,7 +10,7 @@ namespace WebBanVaLi.Controllers
 {
     public class HomeController : Controller
     {
-       QlbanVaLiContext db = new QlbanVaLiContext();
+        QlbanVaLiContext db = new QlbanVaLiContext();
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -27,6 +27,17 @@ namespace WebBanVaLi.Controllers
             PagedList<TDanhMucSp> lst = new PagedList<TDanhMucSp>(lstsanpham,pageNumber,pageSize);
 
             return View(lst);
+        }
+
+        public IActionResult GioHang()
+        {
+            var user = HttpContext.Session.GetString("UserName");
+            if (string.IsNullOrEmpty(user))
+            {
+                return Redirect("/Access/Login");
+            }
+            var items = db.TGioHangs.Include(c => c.MaSpNavigation).Where(c => c.UserId.Equals(user));
+            return View(items.ToList());
         }
 
         public IActionResult SanPhamTheoLoai(String maloai,int? page)
