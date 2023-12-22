@@ -6,6 +6,7 @@ using WebBanVaLi.Services;
 using WebBanVaLi.Models.Authentication;
 using WebBanVaLi.ViewModels;
 using X.PagedList;
+using JetBrains.Annotations;
 
 namespace WebBanVaLi.Controllers
 {
@@ -206,6 +207,7 @@ namespace WebBanVaLi.Controllers
             ViewBag.PaymentMethod = "Đã thanh toán bằng VNPay";
 
             return View("CheckoutSuccess");
+        }
         
         public IActionResult Privacy()
         {
