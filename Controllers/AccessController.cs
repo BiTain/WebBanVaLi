@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using WebBanVaLi.Models;
 using WebBanVaLi.Models.RegisterModel;
 
@@ -26,6 +27,7 @@ namespace WebBanVaLi.Controllers
             if (HttpContext.Session.GetString("UserName") == null)
             {
                 var u = db.TUsers.Where(x => x.Username.Equals(user.Username) && x.Password.Equals(user.Password)).FirstOrDefault();
+                
                 if (u != null && u.LoaiUser == 0)
                 {
                     HttpContext.Session.SetString("UserName", u.Username.ToString());

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebBanVaLi.Models;
 using WebBanVaLi.Repository;
+using WebBanVaLi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,8 @@ var connectionString = builder.Configuration.GetConnectionString("QlbanValiConte
 builder.Services.AddDbContext<QlbanVaLiContext>(x=>x.UseSqlServer(connectionString));
 builder.Services.AddScoped<ILoaiSpRepository,LoaiSpRepository>();
 builder.Services.AddSession();
+
+builder.Services.AddScoped<IVnPayService, VnPayService>();
 
 var app = builder.Build();
 

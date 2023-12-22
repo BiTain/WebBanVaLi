@@ -5,9 +5,9 @@ namespace WebBanVaLi.Models;
 
 public partial class TChiTietHdb
 {
-    public string MaHoaDon { get; set; } = null!;
+    public int MaHoaDon { get; set; }
 
-    public string MaChiTietSp { get; set; } = null!;
+    public string MaSp{ get; set; }
 
     public int? SoLuongBan { get; set; }
 
