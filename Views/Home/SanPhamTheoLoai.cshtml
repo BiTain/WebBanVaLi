@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "SanPhamTheoLoai";
-    Layout = "~/Views/Shared/_LayoutOgani.cshtml";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
 @using X.PagedList.Mvc.Core;
@@ -9,9 +9,6 @@
 {
     @await Html.PartialAsync("PartialSanPham",item)
 }
-<div class="product__pagination">
-    @Html.PagedListPager(Model , page =>Url.Action("SanPhamTheoLoai", new{page=page,maloai=ViewBag.maloai}))
-</div>
 
 
 

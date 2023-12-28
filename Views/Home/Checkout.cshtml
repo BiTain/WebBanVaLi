@@ -30,14 +30,14 @@
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Last Name<span>*</span></p>
-                                    <input type="text" value="@Model.Username">
+                                    <input type="text" value="@Model.Username" disabled>
                                 </div>
                             </div>
                         </div>
                        
                         <div class="checkout__input">
                             <p>Address<span>*</span></p>
-                            <input type="text" placeholder="Street Address" class="checkout__input__add">
+                            <input type="text" placeholder="Street Address" class="checkout__input__add" required>
                             <input type="text" placeholder="Apartment, suite, unite ect (optinal)">
                         </div>
                         
@@ -45,19 +45,19 @@
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Phone<span>*</span></p>
-                                    <input type="text">
+                                    <input type="text" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Email<span>*</span></p>
-                                    <input type="text">
+                                    <input type="email" required>
                                 </div>
                             </div>
                         </div>
                        
                         <div class="checkout__input">
-                            <p>Order notes<span>*</span></p>
+                            <p>Order notes</p>
                             <input type="text"
                                    placeholder="Notes about your order, e.g. special notes for delivery.">
                         </div>
@@ -81,13 +81,13 @@
                             <div class="checkout__input__checkbox">
                                 <label for="checkPayment">
                                     Payment upon delivery
-                                    <input type="radio" id="checkPayment" name="payment" value="cash">
+                                    <input type="radio" id="checkPayment" name="payment" value="cash" required>
                                     <span class="checkmark"></span>
                                 </label>
 
                                 <label for="vnpay">
                                     VNPay
-                                    <input type="radio" id="vnpay" name="payment" value="vnpay">
+                                    <input type="radio" id="vnpay" name="payment" value="vnpay" required>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>

@@ -38,7 +38,7 @@
                                         <h5>@item.MaSpNavigation.TenSp</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        $@item.DonGia.ToString("N0")
+                                        @item.DonGia.ToString("N0")
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
@@ -68,7 +68,7 @@
                     <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
                     <a href="#" class="primary-btn cart-btn cart-btn-right">
                         <span class="icon_loading"></span>
-                        Upadate Cart
+                        Update Cart
                     </a>
                 </div>
             </div>
@@ -87,10 +87,10 @@
                 <div class="shoping__checkout">
                     <h5>Cart Total</h5>
                     <ul>
-                        <li>Subtotal <span>$ @total.ToString("N0")</span></li>
-                        <li>Total <span>$ @total.ToString("N0")</span></li>
+                        <li>Subtotal <span>@total.ToString("N0") VNĐ</span></li>
+                        <li>Total <span>@total.ToString("N0") VNĐ</span></li>
                     </ul>
-                    <button id="btn-checkout" style="width: 100%" class="primary-btn">PROCEED TO CHECKOUT</button>
+                    <button id="btn-checkout" style="width: 100%; border: none;" class="primary-btn">PROCEED TO CHECKOUT</button>
                 </div>
             </div>
         </div>

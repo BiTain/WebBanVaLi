@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebBanVaLi.Models;
 
@@ -60,7 +61,7 @@ public partial class TDanhMucSp
     public string? AnhDaiDien { get; set; }
 
     public decimal? GiaNhoNhat { get; set; }
-
+    
     public decimal? GiaLonNhat { get; set; }
 
     public virtual TChatLieu? MaChatLieuNavigation { get; set; }

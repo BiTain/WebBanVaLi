@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -13,24 +14,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="/1LayoutOgani/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/1LayoutOgani/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/1LayoutOgani/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/1LayoutOgani/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/1LayoutOgani/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/1LayoutOgani/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/1LayoutOgani/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../1LayoutOgani/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../1LayoutOgani/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../1LayoutOgani/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../1LayoutOgani/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../1LayoutOgani/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../1LayoutOgani/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../1LayoutOgani/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../1LayoutOgani/css/style.css" type="text/css">
-
-    <!-- Js Plugins -->
-    <script src="/1LayoutOgani/js/jquery-3.3.1.min.js"></script>
-    <script src="/1LayoutOgani/js/bootstrap.min.js"></script>
-    <script src="/1LayoutOgani/js/jquery.nice-select.min.js"></script>
-    <script src="/1LayoutOgani/js/jquery-ui.min.js"></script>
-    <script src="/1LayoutOgani/js/jquery.slicknav.js"></script>
-    <script src="/1LayoutOgani/js/mixitup.min.js"></script>
-    <script src="/1LayoutOgani/js/owl.carousel.min.js"></script>
-    <script src="/1LayoutOgani/js/main.js"></script>
 </head>
 
 <body>
@@ -111,9 +102,53 @@
         </div>
     </header>
     <!-- Header Section End -->
-    <!-- Shoping Cart Section Begin -->
-    @RenderBody()
-    <!-- Shoping Cart Section End -->
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                @await Component.InvokeAsync("LoaiSpMenu")
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <input type="text" placeholder="What do you need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>02363822571</h5>
+                                <span>Support 24/7 time</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="../1LayoutOgani/img/hero/banner1.jpg" style="background-image: url('../1LayoutOgani/img/hero/banner1.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Products</h2>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row featured__filter" style="align-items:center;justify-content:center">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
     <!-- Footer Section Begin -->
     <footer class="footer spad">
         <div class="container">
@@ -185,6 +220,16 @@
         </div>
     </footer>
     <!-- Footer Section End -->
+    <!-- Js Plugins -->
+    <script src="../1LayoutOgani/js/jquery-3.3.1.min.js"></script>
+    <script src="../1LayoutOgani/js/bootstrap.min.js"></script>
+    <script src="../1LayoutOgani/js/jquery.nice-select.min.js"></script>
+    <script src="../1LayoutOgani/js/jquery-ui.min.js"></script>
+    <script src="../1LayoutOgani/js/jquery.slicknav.js"></script>
+    <script src="../1LayoutOgani/js/mixitup.min.js"></script>
+    <script src="../1LayoutOgani/js/owl.carousel.min.js"></script>
+    <script src="../1LayoutOgani/js/main.js"></script>
+
     <script>
         function addToCart(masp) {
             $.ajax({
@@ -210,6 +255,8 @@
             })
         }
     </script>
+
+
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "ProductDetail";
-    Layout = "~/Views/Shared/_LayoutOgani.cshtml";
+    Layout = "~/Views/Shared/_LayoutContent.cshtml";
 }
 
 @model WebBanVaLi.ViewModels.HomeProductDetailViewModel
@@ -34,9 +34,9 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star-half-o"></i>
-                        <span>(18 reviews)</span>
+                        <span>(17 reviews)</span>
                     </div>
-                    <div class="product__details__price">@Model.danhMucSp.GiaLonNhat</div>
+                    <div class="product__details__price">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:C0}", @Model.danhMucSp.GiaLonNhat)</div>
                     <p>
                         @Model.danhMucSp.GioiThieuSp
                     </p>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="primary-btn">ADD TO CARD</a>
+                    <a href="#" onclick="addToCart('@Model.danhMucSp.MaSp')" class="primary-btn">ADD TO CARD</a>
                     <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                     <ul>
                         <li><b>Availability</b> <span>In Stock</span></li>
